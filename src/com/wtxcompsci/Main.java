@@ -17,7 +17,7 @@ public class Main {
 
         Map<String, String> m = new TreeMap<>();
 
-        int counter = 0;
+ //       int counter = 0;
 
         while (inf.hasNextLine()) {
             String line = inf.nextLine();
@@ -29,30 +29,34 @@ public class Main {
                     m.put(part.next(), part.next());
                 }
             } else {
-                System.out.println("set "+ ++counter+": "+m);
+ //               System.out.println("set "+ ++counter+": "+m);
                 pptList.add(m);
                 m = new TreeMap<>();
             }
         }
 
-        System.out.println();
-        System.out.println(pptList);
-        System.out.println();
+//        System.out.println();
+//        System.out.println(pptList);
+//        System.out.println();
 
-        int ans = 0;
+        int ans = 0, ans2 = 0;
 
         for (Map<String, String> stringStringMap : pptList) {
-            System.out.println(stringStringMap);
-            if (stringStringMap.keySet().size() == 8)
+//            System.out.println(stringStringMap);
+            if ((8 == stringStringMap.keySet().size()) || (!stringStringMap.containsKey("cid") && (stringStringMap.keySet().size() == 7)))
                 ans++;
-            if ((stringStringMap.keySet().size() == 7) && !stringStringMap.containsKey("cid"))
-                ans++;
+
 
         }
 
         //203 is too low
         //259 is too high
 
+
         System.out.println(ans);
+//        System.out.println(ans2);
+
     }
+
+
 }
